@@ -1,2 +1,2 @@
 # medusa
-2D tensor networks using the Cyclops library
+Quantum circuits using the Cyclops library
