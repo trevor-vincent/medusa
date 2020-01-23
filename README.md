@@ -1,2 +1,2 @@
 # medusa
-2D tensor networks using the Cyclops library
+playground for tensor networks using the cyclops tensor contraction library
