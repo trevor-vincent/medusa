@@ -127,7 +127,7 @@ int main(int argc, char **argv) {
   for(int i=0;i<T.local_size();++i) {
     double diff = A[i]-T[i];
     if(error<std::abs(diff)) error = diff;
-  }
+ }
   double max_error;
   MPI_Reduce(&error, &max_error, 1, MPI_DOUBLE, MPI_MAX, 0, comm);
 
