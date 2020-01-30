@@ -24,6 +24,8 @@ public:
     for (int i = 0; i < lattice_size; i++){
       data_[i] = mptensor(Shape(d.first, d.second, D[i], D[i+1]));
     }
+    
+    assert();
   }
   // std::vector<size_t> BondDims();
   // void Compose();

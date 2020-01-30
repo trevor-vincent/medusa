@@ -41,16 +41,20 @@ int main(int argc, char **argv) {
   ptensor A = mptensor::tensordot(mpo[0],mpo[0], mptensor::Axes(1), mptensor::Axes(1));
 
   A.print_info(std::cout);
-  A = mptensor::contract(A, mptensor::Axes(0), mptensor::Axes(3));
-  
+  A = mptensor::contract(A, mptensor::Axes(0), mptensor::Axes(3));  
   A.print_info(std::cout);
 
   mpo[1].print_info(std::cout);
   ptensor B = mptensor::tensordot(mpo[1],mpo[1], mptensor::Axes(1), mptensor::Axes(1));
 
   B.print_info(std::cout);
-  B = mptensor::contract(B, mptensor::Axes(0), mptensor::Axes(3));
-
+  B = mptensor::contract(B, mptensor::Axes(0),
+			 mptensor::Axes(3));
+  B.print_info(std::cout);
+  ptensor C = mptensor::tensordot(A,B, Axes(1,3), Axes(0,2));
+  C.print_info(std::cout);
+  cout << "C[0] = " << C[0] << endl;
+  
   
   // ptensor Btrans = mptensor::transpose(mpo[1], mptensor::Index(1,0,2,3));
   // for (int i = 0; i < Btrans.local_size(); i++)
